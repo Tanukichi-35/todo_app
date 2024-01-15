@@ -1,0 +1,87 @@
+.todo-form__content {
+  margin: 0 auto;
+  max-width: 1230px;
+}
+
+.todo-form__message {
+  font-size: 20px;
+  padding: 1px 0px;
+  color: #0f5132;
+  background-color: #d1e7dd;
+  border-color: #badbcc;
+}
+
+.todo-form__message ul{
+  list-style: none;
+}
+
+.form {
+  margin: 100px auto 50px;
+  width: 80%;
+  text-align: center;
+}
+
+.form__todo{
+
+}
+
+.form__todo-input {
+  padding: 10px;
+  width: 70%;
+  height: 50px;
+  border-width: 1.25px;
+  border-radius: 3px;
+}
+
+.form__todo-button {
+  padding: 10px;
+  width: 150px;
+  height: 50px;
+  font-size: 14px;
+  /* border: none; */
+  border-width: 1.25px;
+  border-radius: 7px;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+.table_show-todo {
+  margin: 0 auto;
+  width: 70%;
+  text-align: left;
+  /* border-collapse: unset; */
+}
+
+.table_show-todo tr{
+  border: none;
+  border-bottom: 1px solid lightgray;
+}
+
+td, th{
+  padding: 10px;
+}
+
+.table_show-todo th {
+  font-size: 20px;
+}
+
+.table__button{
+  padding: 5px;
+  width: 50px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #fff;
+}
+
+td:has(.table__button){
+  width: 60px;
+}
+
+.update {
+  background-color: #0000ff;
+}
+
+.delete {
+  background-color: #ff0000;
+}
