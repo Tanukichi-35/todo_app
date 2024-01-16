@@ -5,14 +5,29 @@
 
 .todo-form__message {
   font-size: 20px;
-  padding: 1px 0px;
+  /* padding: 1px 0px; */
+}
+
+.todo-form__message ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.todo-form__message li {
+  padding:10px;
+}
+
+.list__messages {
   color: #0f5132;
   background-color: #d1e7dd;
   border-color: #badbcc;
 }
 
-.todo-form__message ul{
-  list-style: none;
+.list__error_messages {
+  color: #842029;
+  background-color: #f8d7da;
+  border-color: #f5c2c7;
 }
 
 .form {
