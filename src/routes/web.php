@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use app\Http\Controllers\TodoController;
+use App\Http\Controllers\TodoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +16,8 @@ use app\Http\Controllers\TodoController;
 
 Route::get('/', [
     TodoController::class, 'index'
+]);
+
+Route::post('/todos', [
+    TodoController::class, 'store'
 ]);

@@ -11,7 +11,7 @@
       <li>Todoを作成しました</li>
     </ul>
   </div>
-  <form class="form" action="/" method="post">
+  <form class="form" action="/todos" method="post">
     @csrf
     <div class="form__todo">
       <input class="form__todo-input" type="text" name="content" placeholder="パンを買う" value="{{old ('content')}}" />
@@ -24,8 +24,11 @@
       <th></th>
       <th></th>
     </tr>
+    @foreach ($todos as $todo)
     <tr>
-      <td>test</td>
+      <td>
+        {{$todo->get()}}
+      </td>
       <td>
         <button class="table__button update">更新</button>
       </td>
@@ -33,6 +36,7 @@
         <button class="table__button delete">削除</button>
       </td>
     </tr>
+    @endforeach
   </table>  
 </div>
 @endsection
