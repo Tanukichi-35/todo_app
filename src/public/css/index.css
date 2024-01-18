@@ -30,27 +30,46 @@
   border-color: #f5c2c7;
 }
 
-.form {
-  margin: 100px auto 50px;
+.form__create {
+  margin: 100px auto 10px;
   width: 80%;
   text-align: center;
 }
 
-/* .form__todo{
+.form__search {
+  margin: 10px auto 50px;
+  width: 80%;
+  text-align: center;
+}
 
-} */
+.form__create h2{
+  text-align: left;
+}
+
+.form__search h2{
+  text-align: left;
+}
 
 .form__todo-input {
   padding: 10px;
-  width: 70%;
+  width: 50%;
   height: 50px;
   border-width: 1.25px;
   border-radius: 3px;
 }
 
-.form__todo-button {
+.form__category-input {
   padding: 10px;
-  width: 150px;
+  width: 20%;
+  height: 50px;
+  border-width: 1.25px;
+  border-radius: 3px;
+  margin-left: 10px;
+}
+
+.form__todo-create-button {
+  padding: 10px;
+  width: 170px;
   height: 50px;
   font-size: 14px;
   /* border: none; */
@@ -59,11 +78,26 @@
   background: #000;
   color: #fff;
   cursor: pointer;
+  margin-left: 100px;
+}
+
+.form__todo-search-button {
+  padding: 10px;
+  width: 170px;
+  height: 50px;
+  font-size: 14px;
+  /* border: none; */
+  border-width: 1.25px;
+  border-radius: 7px;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 100px;
 }
 
 .table_show-todo {
   margin: 0 auto;
-  width: 70%;
+  width: 80%;
   text-align: left;
   /* border-collapse: unset; */
 }
@@ -79,6 +113,11 @@ td, th{
 
 .table_show-todo th {
   font-size: 20px;
+}
+
+.table_show-todo input {
+  width: 100%;
+  border-style: none;
 }
 
 .table__button{

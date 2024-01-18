@@ -41,16 +41,31 @@
       <li class="list__messages">Todoを作成しました</li>
     </ul> --}}
   </div>
-  <form class="form" action="/todos" method="post">
+  <!--新規作成-->
+  <form class="form__create" action="/todos" method="post">
     @csrf
+    <h2>新規作成</h2>
     <div class="form__todo">
-      <input class="form__todo-input" type="text" name="content" placeholder="パンを買う" value="{{old ('content')}}" />
-      <button class="form__todo-button" type="submit">作成</button>
+      <input class="form__todo-input" type="text" name="content" placeholder="やること" value="{{old ('content')}}" />
+      <input class="form__category-input" type="text" name="category" placeholder="カテゴリ" value="{{old ('category')}}" />
+      <button class="form__todo-create-button" type="submit">作成</button>
     </div>
   </form>
+  <!--Todo検索-->
+  <form class="form__search" action="/todos" method="get">
+    @csrf
+    <h2>Todo検索</h2>
+    <div class="form__todo">
+      <input class="form__todo-input" type="text" name="content" placeholder="やること" value="{{old ('content')}}" />
+      <input class="form__category-input" type="text" name="category" placeholder="カテゴリ" value="{{old ('category')}}" />
+      <button class="form__todo-search-button" type="submit">検索</button>
+    </div>
+  </form>
+  <!--Todoテーブル-->
   <table class="table_show-todo">
     <tr>
       <th class="table_show-todo-column">Todo</th>
+      <th class="table_show-category-column">カテゴリ</th>
       <th></th>
       <th></th>
     </tr>
@@ -61,6 +76,10 @@
         <td>
           <input name="id" type="hidden" value="{{$todo['id']}}">
           <input class="form__todo-input" type="text" name="content" value="{{$todo['content']}}"/>
+          {{-- {{$todo->getContent()}} --}}
+        </td>
+        <td>
+          <input class="form__category-input" type="text" name="content" value=""/>
           {{-- {{$todo->getContent()}} --}}
         </td>
         <td>

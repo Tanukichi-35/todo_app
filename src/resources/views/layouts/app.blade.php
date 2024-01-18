@@ -17,6 +17,9 @@
       <a class="header__logo" href="/">
         Todo App
       </a>
+      <a class="header__category" href="/category">
+        カテゴリ一覧
+      </a>
     </div>
   </header>
 
