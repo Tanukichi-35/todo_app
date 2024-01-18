@@ -21,3 +21,16 @@ Route::get('/', [
 Route::post('/todos', [
     TodoController::class, 'store'
 ]);
+
+Route::post('/todos/update', [
+    TodoController::class, 'update'
+]);
+
+Route::post('/todos/delete', [
+    TodoController::class, 'destroy'
+]);
+
+
+// Route::post('/todos/update/{id}', [
+//     TodoController::class, 'update'
+// ]);

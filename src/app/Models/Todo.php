@@ -12,7 +12,19 @@ class Todo extends Model
         'content',
     ];
 
-    public function get(){
+    public function getID(){
+        return $this->id;
+    }
+
+    public function getContent(){
         return $this->content;
     }
+
+    public function getEditURL(){
+        return 'todos/update/'.$this->id;
+    }
+
+    public function getDeleteURL(){
+        return 'todos//delete/'.$this->id;
+    }    
 }
