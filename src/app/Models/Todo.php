@@ -9,22 +9,19 @@ class Todo extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'category_id',
         'content',
     ];
 
-    public function getID(){
-        return $this->id;
-    }
+    // public function getEditURL(){
+    //     return 'todos/update/'.$this->id;
+    // }
 
-    public function getContent(){
-        return $this->content;
-    }
+    // public function getDeleteURL(){
+    //     return 'todos//delete/'.$this->id;
+    // }    
 
-    public function getEditURL(){
-        return 'todos/update/'.$this->id;
+    public function category(){
+        return $this->belongsTo('App\Models\Category');
     }
-
-    public function getDeleteURL(){
-        return 'todos//delete/'.$this->id;
-    }    
 }
