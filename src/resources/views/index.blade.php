@@ -46,8 +46,13 @@
     @csrf
     <h2>新規作成</h2>
     <div class="form__todo">
-      <input class="form__todo-input" type="text" name="content" placeholder="やること" value="{{old ('content')}}" />
-      <input class="form__category-input" type="text" name="category" placeholder="カテゴリ" value="{{old ('category')}}" />
+      <input class="form__todo-input" type="text" name="content" placeholder="Todo" value="{{old ('content')}}" />
+      {{-- <input class="form__category-input" type="text" name="category" placeholder="カテゴリ" value="{{$categories[0]->name}}" /> --}}
+      <select class="form__category-select" name="category_id">
+          @foreach ($categories as $category)
+              <option value="{{ $category->id }}" @if(old('category_id') == $category->id) selected @endif>{{ $category->name }}</option>
+          @endforeach
+      </select>
       <button class="form__todo-create-button" type="submit">作成</button>
     </div>
   </form>
@@ -56,8 +61,13 @@
     @csrf
     <h2>Todo検索</h2>
     <div class="form__todo">
-      <input class="form__todo-input" type="text" name="content" placeholder="やること" value="{{old ('content')}}" />
-      <input class="form__category-input" type="text" name="category" placeholder="カテゴリ" value="{{old ('category')}}" />
+      <input class="form__todo-input" type="text" name="content" placeholder="Todo" value="{{old ('content')}}" />
+      {{-- <input class="form__category-input" type="text" name="category" placeholder="カテゴリ" value="{{old ('category')}}" /> --}}
+      <select class="form__category-select" name="category_id">
+          @foreach ($categories as $category)
+              <option value="{{ $category->id }}" @if(old('category_id') == $category->id) selected @endif>{{ $category->name }}</option>
+          @endforeach
+      </select>
       <button class="form__todo-search-button" type="submit">検索</button>
     </div>
   </form>
@@ -79,7 +89,13 @@
           {{-- {{$todo->getContent()}} --}}
         </td>
         <td>
-          <input class="form__category-input" type="text" name="content" value=""/>
+          {{-- <input class="form__category-input" type="text" name="name" value="{{$categories[$todo->category_id - 1]->name}}"/> --}}
+          <select class="form__category-select" name="category_id">
+              @foreach ($categories as $category)
+                  <option value="{{ $category['id'] }}" @if($todo['category_id'] == $category['id']) selected @endif>{{ $category['name'] }}</option>
+              @endforeach
+          </select>
+          {{-- <input class="form__category-input" type="text" name="name" value="{{$categories[$todo->category_id]->name}}"/> --}}
           {{-- {{$todo->getContent()}} --}}
         </td>
         <td>
