@@ -32,9 +32,9 @@ class TodoRequest extends FormRequest
     public function messages()
     {
         return [
-            'content.required' => '入力してください',
-            'content.string' => '文字を入力してください',
-            'content.max' => '20文字以内で入力してください',
+            'content.required' => 'Todo を入力してください',
+            'content.string' => 'Todo を文字列で入力してください',
+            'content.max' => 'Todo を20文字以内で入力してください',
         ];
     }
 }
