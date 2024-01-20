@@ -1,0 +1,118 @@
+.category-form__content {
+  margin: 0 auto;
+  max-width: 1230px;
+}
+
+.category-form__message {
+  font-size: 20px;
+  /* padding: 1px 0px; */
+}
+
+.category-form__message ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.category-form__message li {
+  padding:10px;
+}
+
+.list__messages {
+  color: #0f5132;
+  background-color: #d1e7dd;
+  border-color: #badbcc;
+}
+
+.list__error_messages {
+  color: #842029;
+  background-color: #f8d7da;
+  border-color: #f5c2c7;
+}
+
+.form__create {
+  margin: 100px auto 50px;
+  width: 80%;
+  text-align: center;
+}
+
+.form__search {
+  margin: 10px auto 50px;
+  width: 80%;
+  text-align: center;
+}
+
+.form__create h2{
+  text-align: left;
+}
+
+.form__search h2{
+  text-align: left;
+}
+
+.form__category-input {
+  padding: 10px;
+  width: 70%;
+  height: 50px;
+  border-width: 1.25px;
+  border-radius: 3px;
+}
+
+.form__category-create-button {
+  padding: 10px;
+  width: 170px;
+  height: 50px;
+  font-size: 14px;
+  /* border: none; */
+  border-width: 1.25px;
+  border-radius: 7px;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 100px;
+}
+
+.table_show-category {
+  margin: 0 auto;
+  width: 80%;
+  text-align: left;
+  /* border-collapse: unset; */
+}
+
+.table_show-category tr{
+  border: none;
+  border-bottom: 1px solid lightgray;
+}
+
+td, th{
+  padding: 10px;
+}
+
+.table_show-category th {
+  font-size: 20px;
+}
+
+.table_show-category input {
+  width: 100%;
+  border-style: none;
+}
+
+.table__button{
+  padding: 5px;
+  width: 50px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #fff;
+}
+
+td:has(.table__button){
+  width: 60px;
+}
+
+.update {
+  background-color: #0000ff;
+}
+
+.delete {
+  background-color: #ff0000;
+}
