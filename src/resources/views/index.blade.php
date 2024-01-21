@@ -57,16 +57,17 @@
     </div>
   </form>
   <!--Todo検索-->
-  <form class="form__search" action="/todos" method="get">
+  <form class="form__search" action="/todos/search" method="get">
     @csrf
     <h2>Todo検索</h2>
     <div class="form__todo">
       <input class="form__todo-input" type="text" name="content" placeholder="Todo" value="{{old ('content')}}" />
       {{-- <input class="form__category-input" type="text" name="category" placeholder="カテゴリ" value="{{old ('category')}}" /> --}}
       <select class="form__category-select" name="category_id">
-          @foreach ($categories as $category)
-              <option value="{{ $category->id }}" @if(old('category_id') == $category->id) selected @endif>{{ $category->name }}</option>
-          @endforeach
+        <option value=""></option>
+        @foreach ($categories as $category)
+          <option value="{{ $category->id }}" @if(old('category_id') == $category->id) selected @endif>{{ $category->name }}</option>
+        @endforeach
       </select>
       <button class="form__todo-search-button" type="submit">検索</button>
     </div>

@@ -24,4 +24,18 @@ class Todo extends Model
     public function category(){
         return $this->belongsTo('App\Models\Category');
     }
+
+    public function scopeKeywordSearch($query, $keyword)
+    {
+        if (!empty($keyword)) {
+            $query->where('content', 'like', '%' . $keyword . '%');
+        }
+    }
+
+    public function scopeCategorySearch($query, $category_id)
+    {
+        if (!empty($category_id)) {
+            $query->where('category_id', $category_id);
+        }
+    }
 }

@@ -31,7 +31,7 @@ Route::post('/todos/delete', [
     TodoController::class, 'destroy'
 ]);
 
-Route::post('/todos/search', [
+Route::get('/todos/search', [
     TodoController::class, 'search'
 ]);
 

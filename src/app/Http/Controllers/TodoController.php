@@ -51,4 +51,22 @@ class TodoController extends Controller
         $todo->delete(); 
         return redirect('/')->with('success','Todoを削除しました');;
     }
+
+    public function search(Request $request){
+        $todos = Todo::with('category');
+        dd($request);
+        if(!empty($request->content)) {         //入力欄が空ではない場合、検索処理を実行
+            $todos = $todos->where('content', 'LIKE', "%{$request->content}%")->get();
+        }
+        if(!empty($request->category_id)) {     //入力欄が空ではない場合、検索処理を実行
+            $todos = $todos->where('category_id', '=', $request->category_id)->get();
+        }
+        // dd($todos);
+
+        // $todos = Todo::with('category')->CategorySearch($request->category_id)->KeywordSearch($request->content)->get();
+        $categories = Category::all();
+        // dd($request->content);
+
+        return view('index', compact('todos', 'categories'));
+    }
 }
