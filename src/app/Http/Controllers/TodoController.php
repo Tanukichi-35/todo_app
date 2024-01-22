@@ -53,17 +53,17 @@ class TodoController extends Controller
     }
 
     public function search(Request $request){
-        $todos = Todo::with('category');
-        dd($request);
-        if(!empty($request->content)) {         //入力欄が空ではない場合、検索処理を実行
-            $todos = $todos->where('content', 'LIKE', "%{$request->content}%")->get();
-        }
-        if(!empty($request->category_id)) {     //入力欄が空ではない場合、検索処理を実行
-            $todos = $todos->where('category_id', '=', $request->category_id)->get();
-        }
+        // $todos = Todo::with('category');
+        // if(!empty($request->category_id)) {     //入力欄が空ではない場合、検索処理を実行
+        //     $todos = $todos->where('category_id', '=', $request->category_id);
+        //     if(!empty($request->content)) {         //入力欄が空ではない場合、検索処理を実行
+        //         $todos = $todos->where('content', 'LIKE', "%{$request->content}%");
+        //     }
+        // }
+        // $todos = $todos->get();
         // dd($todos);
 
-        // $todos = Todo::with('category')->CategorySearch($request->category_id)->KeywordSearch($request->content)->get();
+        $todos = Todo::with('category')->CategorySearch($request->category_id)->KeywordSearch($request->content)->get();
         $categories = Category::all();
         // dd($request->content);
 
